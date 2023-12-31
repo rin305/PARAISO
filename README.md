@@ -8,7 +8,9 @@
 
 ### 개발 목적
 <img src="./projectImage/project1.png">
-숙소 예약 및 문의, 후기 작성 기능을 포함하여, 숙소 이용자들과 실시간으로 소통하고 예약하는 <span style=" font-weight : 600">다목적 리조트 예약 사이트</span>
+숙소 예약 및 문의, 후기 작성 기능을 포함하여, 숙소 이용자들과 실시간으로 소통하고 예약하는
+
+**다목적 리조트 예약 사이트**
 
 ### 개발 환경
 <img src="./projectImage/project2.png">

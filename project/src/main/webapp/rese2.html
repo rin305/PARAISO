@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<title>PARAISO 리조트</title>
+
+	<!-- CSS Import -->
+	<link type="text/css" href="./css/basic.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+	<!-- 플러그인 -->
+
+</head>
+
+<!-- header -->
+<!-- 로고 -->
+<%@ include file="header.html" %>
+<!--//header -->
+
+
+<!-- 서브상단이미지 -->
+<body>
+<div class="sub_topgrp">
+	<div class="subtitbox">
+		<h1 id="mtitle">객실예약</h1>
+	</div>
+	<div class="s_topimg">
+		<img src="./image/faci_top.png"/>
+	</div>
+</div>
+<!-- //서브상단이미지 -->
+
+
+<!-- Contents Start -->
+<div id="contents_sub">
+	<div class="content_area">
+		<div class="subtitbox02">
+			<h1 id="ltitle">온라인 예약</h1>
+		</div>
+		<form id="frm" action="res_proc.do">
+				<input type="hidden" name="eegbcode" value="KOR">
+                <input type="hidden" name="bmbeonho" value="0000">
+                <input type="hidden" name="room_num" value="${param.room_num}">
+                <input type="hidden" name="rsv_start" value="${param.sdate}">
+                <input type="hidden" name="rsv_end" value="${param.edate}">
+                <input type="hidden" name="rsv_price" value="${param.rsv_price}">
+                <input type="hidden" name="rsv_person" value="${param.rsv_person}">
+
+			<div class="contents_sub" style="width:1200px !important;min-height: 850px;height:100%;margin: 0 auto;padding-top:50px;">
+				<div class="reser_area">
+
+					<!-- 왼쪽 -->
+					<div class="resergrp">
+						<!-- 예약고객정보입력 -->
+						<h3 class="infor_title infor_tit_hu">예약 고객 정보 입력</h3>
+						<div class="reser_line"></div>
+						<br>
+						<table class="tb_rsinfo">
+							<colgroup><col width="120px"></colgroup>
+							<tbody>
+							<tr>
+								<th>성명<em class="point">*</em></th>
+								<td>
+									<input name="rsv_name" id="name_input_text" type="text" class="i_text" data-check="required" style="width:100%;">
+									<div class="register_list_caution">
+                                		<span id="name_caution">! 이름은 필수정보입니다</span>
+		                            </div>	
+								</td>
+							</tr>
+							<tr>
+								<th>연락처<em class="point">*</em><br></th>
+								<td>
+									<input name="rsv_phone" id="phone_input_text" type="text" data-check="required" class="onlynum" value="" placeholder="'-'없이 숫자 만 입력하십시오." style="width:100%;">
+									<div class="register_list_caution">
+                                		<span id="newpwchk_caution">! 연락처는 필수정보입니다</span>
+                            		</div>
+								</td>
+							</tr>
+							</tbody>
+						</table>
+						<br>
+						<!-- 안내사항표기 -->
+						<br>
+						<br>
+						<div class="info_memo_box">
+							<p class="info_memo_txt pageTxt" data-page="priv05"><p><span style="font-size: medium;">※ 조식 추가는 체크인시 프론트 현장 결제를 통해 가능합니다.</span></p>
+							<ul style="list-style-type: circle;">
+								<li><span style="font-size: small;">&nbsp; &nbsp; &nbsp; 2023년 01월 까지 : 성인 20,000원/인, 어린이(13세이하) 18,000원/인</span></li>
+								<li><span style="font-size: small;"><span>&nbsp; &nbsp; &nbsp; 2023년 02월 부터 : 성인 23,000원/인, 어린이(13세이하) 16,000원/인</span></span></li>
+							</ul></p>
+						</div>
+						<!-- //안내사항표기 -->
+						<br>
+						<br>
+						<br>
+					</div>
+					<!-- //왼쪽 -->
+
+					<!-- 오른쪽 -->
+					<div class="quk_reser">
+						<div class="pd_box">
+							<div class="tb_divbox">
+						<span class="tb_cell bx_date before_bg">
+							<h4>체크인</h4>
+							<span class="bx_dateall ckiDate" onclick="document.getElementById('checkInUpdate')"> 
+								<span class="date_txt">${param.sdate}</span>
+							</span>
+						</span>
+								<span class="tb_cell txt_bak">
+						</span>
+								<span class="tb_cell bx_date">
+							<h4>체크아웃</h4>
+							<span class="bx_dateall ckoDate">
+								<span class="date_txt">${param.edate}</span>
+							</span>
+						</span>
+							</div>
+						</div>
+						<div class="total_img" style="height: 170px;">
+							<img src="./image/room3_big1.jpg" width="100%" height="100%">
+						</div>
+						<div class="pd_box02">
+							<h3 class="total_title">파라이소 리조트</h3>
+							<p class="address_txt">서울 강남구 테헤란로1길 10 세경빌딩&nbsp; 파라이소</p>
+							<table class="tb_qukinfo">
+								<colgroup>
+									<col width="35%">
+									<col width="65%">
+								</colgroup>
+								<tbody>
+								<tr class="info_row">
+									<th class="txt_l">객실번호</th>
+									<td class="txt_r">${param.room_num}</td>
+								</tr>
+								<tr class="info_row">
+									<th class="txt_l">체크인</th>
+									<td class="txt_r">15:00</td>
+								</tr>
+								<tr class="info_row">
+									<th class="txt_l">체크아웃</th>
+									<td class="txt_r">11:00</td>
+								</tr>
+								<tr class="info_row">
+									<th class="txt_l">인원수</th>
+									<td class="txt_r">인원: ${param.rsv_person}명</td>
+								</tr>
+								<!--
+ 								<tr class="info_row">
+									<th class="txt_l">기준(최대)인원</th>
+									<td class="txt_r">2명 (최대 4명)</td>
+								</tr> 
+								-->
+								</tbody>
+							</table>
+						</div>
+						<div class="total_bar"></div>
+						<div class="pd_box02">
+							<table class="tb_qukinfo">
+								<colgroup><col width="35%"><col width="65%"></colgroup>
+								<tbody><tr class="price_row">
+									<!--						
+									<th class="txt_l" style="padding-top:0;">판매금액</th>
+									<td id="original_price" class="txt_r" style="padding-top:0;">
+										870,000원
+									</td> 
+									-->	
+								</tr>
+								<tr>
+									<th class="txt_l"><h3 class="total_price02" style="padding-bottom:0;">총 결제금액<br>(VAT포함)</h3></th>
+									<td id="sum_price" class="txt_r" style="padding-bottom:0;">
+										${param.rsv_price}
+										<span class="unit">원</span>
+									</td>
+								</tr>
+								</tbody></table>
+						</div>
+
+						<a id="pay_btn" class="reser_btn"><span class="reser_btn_icon02"></span>결제하기</a>
+					</div>
+					<!-- //오른쪽 -->
+				</div>
+			</div>
+		</form>
+		<form id="payForm" name="payForm" accept-charset="euc-kr" style="display:none;">
+		</form>
+
+	</div>
+	<!-- Content End -->
+
+	<!-- Content End -->
+</div>
+<!-- contents End -->
+
+<!-- container End -->
+
+
+<!-- Footer Start -->
+<%@ include file="footer.html" %>
+
+
+<!-- Footer End -->
+<!-- btn_top 적용되는 거 -->
+<!--<script type="text/javascript">-->
+<!--	$(document).ready(function() {-->
+<!--		$('#ft_btn_close').bind('click', function() {-->
+<!--			$('html, body').stop().animate({scrollTop:'0'}, 600)-->
+<!--		});-->
+<!--	});	-->
+<!--</script>	-->
+
+<script src="./js/footer.js"></script>
+
+</body>
+</html>

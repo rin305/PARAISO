@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+@import url(./fonts/notosanskr.css);
+
+html, body {margin:0;padding:0;width:100%; min-width: 1000px;font-family:'Noto Sans KR', sans-serif; }
+body, h1, h2, h3, h4, h5, h6, fieldset, legend, form {font-size:13px; line-height:130%; margin: 0px; padding: 0px;}
+dl, dt, dd, p {margin: 0px;padding: 0px;line-height: 170%;font-size: 13px;}
+ul, li, ol { margin: 0px; padding: 0px; list-style: none; }
+address, strong, em { font-style: normal; }
+img, fieldset { border: 0px; }
+caption { display: none; padding: 0px; margin: 0px; } 
+a { cursor: pointer; color: inherit; text-decoration:none; }
+button { cursor: pointer; }
+
+table { width:100%; border: 0px; }
+td { text-align:left; }
+th { font-weight:normal; text-align:center; }
+textarea {resize:none;}
+
+input:focus, select:focus, textarea:focus, button:focus {outline:none;}
+
+/* input */
+.ibox { position:relative; margin:-4px 0; }
+.ibox .i_label{ top:6px; left:10px }
+.ibox .i_dsc{ margin:2px 0 }
+.ibox .i_check,
+.ibox .i_radio{ width:13px; height:13px; margin:2px; padding:0; vertical-align:middle }
+.ibox .i_text{position:relative;margin:2px;padding: 0px 4px;background:#fff;border:1px solid #E1E1E1;vertical-align:middle;color:#777;height: 31px;font-size: 13px;}
+.ibox select {border:1px solid #E1E1E1;margin:2px;height: 33px;padding-left: 5px;}
+.ibox .i_area{ position:relative; margin:2px; padding:4px 4px; background:transparent; border:1px solid #E1E1E1; color:#999; font-size:12px; }
+.ibox .i_tip { font-size:11px; color:#bebebe; margin:2px; }
+.ibox label{ margin:0 5px 0 0px; cursor:pointer; color:#858585; font-size:13px; }
+
+
+.txt_l { text-align: left!important; font-weight: bold !important; }
+.txt_r { text-align: right!important; }
+.txt_c { text-align: center!important; }
+
